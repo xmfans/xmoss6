@@ -1,0 +1,168 @@
+
+/* css document */
+
+.rankleft {
+	width:13em;
+	margin:0 0 0 6px;
+	float: left;
+}
+.rankleft-title {
+	background:url(../pic/navibg.jpg) repeat-x;
+	height:34px;
+	padding:0 35px;
+	line-height:34px;
+}
+.rankleft-title,.classify,.classify2,.classify3 {
+	border:1px solid #e0e0e0;
+	font-size:14px;
+	font-weight:bold
+}
+.rankleft-title a,.classify a {
+	color:#3d3131;
+}
+/* left-title*/
+.rankleft-title a:hover,.classify a:hover {
+	color:#3366a5
+}
+.classify2 a {
+	color:#3366a5;
+	text-decoration:none
+}
+.classify,.classify2,.classify3 {
+	background:url(../pic/navibg.jpg) 0 -133px repeat-x;
+	height:24px;
+	padding:9px 10px 0 35px;
+	border-top:none;
+}
+.classadd,.classadd2 {
+	width:11px;
+	height:11px;
+	*height:13px;
+	_height:11px;
+	display:inline-block;
+	margin-right:10px
+}
+
+.classifyer {
+	text-align:left;
+	padding:10px 10px 10px 15px;
+	border:#d1d1d1 solid 1px;
+	border-top:none;
+	line-height:20px;
+	*line-height:18px;
+	_line-height:20px;
+	font-size:12px;
+}
+.classifyer .digital {
+	width:20px;
+	display:inline-block;
+	color:#fe267b;
+	padding:0 3px 0 0;
+}
+
+.classifyer a {
+	width:106px;
+	padding-left: 38px;
+	display:inline-block;
+	color:#3c6e9f;
+	overflow:hidden;
+	height:20px;
+	*position:relative;
+	*top:-4px;
+	font-size:14px;
+}
+
+.rankyear_curr {
+    color: #E00!important;
+    font-weight: bold;
+}
+
+
+/*替换*/
+.classifyer .digital2 {
+	color:#656469;
+	width:60px;
+	text-align:right;
+	display:inline-block
+}
+/* left-classify,classify2*/
+.classify3 {
+	border-right:none;
+}
+.classify3 .most {
+	color:#fb350e;
+	font-weight:bold
+}
+
+.rank_nav_all {
+	padding-left: 6px;
+}
+
+
+
+/* rank html css ========================= */
+
+#rank_list {
+	width: 27.1%;
+	float: left;
+	border-right-width: 0px;
+	margin: 0 0 0.3em 0.5em;
+}
+#rank_list:nth-child(n+4) {
+	border-left: 1px dashed #c8c8c8;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+#rank_list:nth-child(5) {
+	border-right-width: 1px;
+}
+#rank_list li em {
+    width: 80%;
+}
+#rank_list em a font {
+	float: left;
+	min-width: 2em;
+	width: auto;
+	padding-right: 5%;
+	font-weight: 600;
+}
+
+@media only screen and (max-width:48.4999em) {
+	#rank_list {
+		width: 96%!important;
+		border-right-width: 1px!important;
+		border-top-width: 0px;
+		border-bottom-width: 0px;
+		border-left: 1px solid #87cefa!important;
+		margin: 0 0 0 0.5em!important;
+	}
+	#rank_list li {
+		border-bottom: 1px dotted #add8e6!important;
+	}
+	#rank_list li span {
+		margin-right: 1%!important;
+	}
+	.rankleft {
+		width: 96%;
+	}
+	.classifyer a {
+		width: auto!important;
+		max-width: 10em!important;
+		padding: 0 1% 0 1%!important;
+	}
+	.rank_div_all {
+		padding-left: 15px;
+	}
+	.rank_div_all a {
+		padding-left: 1%;
+	}
+	.rankleft-title {
+		padding-left: 15px;	
+	}
+	.rankleft-title a {
+		padding-left: 1%;	
+	}
+	
+}
+
+

@@ -1,0 +1,44 @@
+
+
+ul li {
+    list-style: none;
+}
+li {
+    display: inline-block;
+}
+      .pbutton {
+	box-sizing: border-box;
+	display: inline-block;
+	/*font-size: 1.1em;*/
+	line-height: 24px;
+	min-width: 40px;
+	height: 32px;
+	padding: 4px 8px;
+	text-align: center;
+	text-align-last: center;
+	vertical-align: middle;
+	margin: 5px;
+	text-decoration: none;
+	background-color: transparent;
+	border-radius: 1px;
+	color: #e8e8e9;
+}
+
+.pbutton {
+	border: 1px solid #505051;
+}
+
+.pbutton_current {
+	background-color: #313132;
+}
+.pbutton_current:hover, .pbutton_current:active {
+	background-color: #313132;
+}
+
+.pbutton_select {
+	-webkit-appearance: none; 
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 0px;
+}
+
