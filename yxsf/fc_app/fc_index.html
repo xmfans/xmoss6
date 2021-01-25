@@ -1,0 +1,208 @@
+{% autoescape off %}
+
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    {{html_mobile_agent}}
+    <title>风车动漫(P)－专注动漫的门户网站</title>
+    <meta name="keywords" content="风车动漫" />
+    <meta name="description" content="风车动漫(pan)——支持网盘下载的风车动漫，动漫免费在线观看，免费下载，无需注册，更新及时，我们致力打造最好的风车动漫站！" />
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/fc_pic/favicon.ico" type="image/vnd.microsoft.icon">
+    <link href="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/fc_css/style.css?ver=156223" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://s3.pstatp.com/cdn/expire-1-M/jquery/1.12.4/jquery.min.js?ver=156223"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/fc_js/jquery.foucs.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/fc_js/history.js?ver=156223"></script>
+  </head>
+  
+  <body>
+
+    {{ html_index_head }}
+    {{ html_index_memu_str }}
+    
+    <div class="blank"></div>
+    <div class="foucs bg">
+      <div class="hero-wrap">
+
+        {{ html_index_slide_pic }}
+        
+      </div>
+      <div class="helper">
+        <div class="mask-left"></div>
+        <div class="mask-right"></div>
+        <a href="javascript:void(0)" class="prev icon-arrow-a-left" target="_self"></a>
+        <a href="javascript:void(0)" class="next icon-arrow-a-right" target="_self"></a>
+      </div>
+    </div>
+    <script type="text/javascript">$.foucs({
+        direction: 'left'
+      });</script>
+    <div class="blank"></div>
+    <div class="area box">
+
+      {{ html_index_index_box1_l }}
+ 
+      {{ html_index_index_box2_l }}
+      
+      {{ html_index_index_box3_l }}
+      
+    </div>
+    <div class="blank"></div>
+    <div class="area">
+      <div class="firs l">
+        <div class="dtit">
+          <h2>
+            <a href="/list/?order=%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4">最新更新</a></h2>
+          <span>
+            <a href="/list/?order=%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4">更多>></a></span>
+        </div>
+        <div class="img">
+          <ul>
+
+            {{ pic_list_dateup_notXX_str }}
+            
+          </ul>
+        </div>
+        <div class="dtit">
+          <h2>
+            <a href="/list/?region=%E4%B8%AD%E5%9B%BD">国产动漫</a></h2>
+          <span>
+            <a href="/list/?region=%E4%B8%AD%E5%9B%BD">更多>></a></span>
+        </div>
+        <div class="img">
+          <ul>
+            {{ pic_list_dateup_guoman_str }}     
+          </ul>
+        </div>
+        <div class="dtit">
+          <h2>
+            <a href="/list/?year={{year_season_0.0}}&season={{year_season_0.1}}&region=%E6%97%A5%E6%9C%AC">新番动漫</a></h2>
+          <span>
+            <a href="/list/?year={{year_season_0.0}}&season={{year_season_0.1}}&region=%E6%97%A5%E6%9C%AC">更多>></a></span>
+        </div>
+        <div class="img">
+          <ul>
+            {{ pic_list_xinfans_rankup_str }}        
+          </ul>
+        </div>
+        <div class="dtit">
+          <h2>
+            <a href="/list/?genre=%E5%89%A7%E5%9C%BA%E7%89%88">动漫电影</a></h2>
+          <span>
+            <a href="/list/?genre=%E5%89%A7%E5%9C%BA%E7%89%88">更多>></a></span>
+        </div>
+        <div class="img">
+          <ul>
+            {{ pic_list_dateup_movie_str }}
+          </ul>
+        </div>
+        <div class="dtit">
+          <h2>
+            <a href="/list/?label=%E5%90%8E%E5%AE%AB">后宫动漫</a></h2>
+          <span>
+            <a href="/list/?label=%E5%90%8E%E5%AE%AB">更多>></a></span>
+        </div>
+        <div class="img">
+          <ul>
+            {{ pic_list_dateup_hougong_str }}
+          </ul>
+        </div>
+
+        <div class="dtit">
+            <h2>
+              <a href="/list/?label=%E7%83%AD%E8%A1%80">热血动漫</a></h2>
+            <span>
+              <a href="/list/?label=%E7%83%AD%E8%A1%80">更多>></a></span>
+          </div>
+          <div class="img">
+            <ul>
+              {{ pic_list_dateup_rexue_str }}
+            </ul>
+          </div>
+
+          
+      </div>
+      <div class="side r">
+        <div class="bg">
+
+          {{ xinfans_table_str }}
+
+        </div>
+        <div class="blank"></div>
+        <div class="bg">
+
+          {{ ""|tp_fc_html_rankup_week }}
+          
+        </div>
+      </div>
+    </div>
+
+    <style>#friendlink_hid{position:absolute;top:-9999px;}</style>
+    <div id="friendlink_hid">
+        {{ ""|tp_friendlink_hid }}
+    </div>
+    
+    <div class="area">
+      <div class="dtit">
+        <h2>友情链接</h2></div>
+      <div class="link">
+        <a href="http://www.dm530p.com" target="_blank">风车动漫(P)</a>
+        <a href="http://m.dm530p.com" target="_blank">风车动漫网(P)</a>
+      </div>
+    </div>
+    <script>var week = (new Date()).getDay();
+      week = week == 0 ? 6 : week - 1;
+      $('.tag span').eq(week).addClass('av');
+      $('.tlist ul').eq(week).show();
+      qike123.switchTab($('.tag span'), $('.tlist ul'), {
+        trigger: 'click'
+      });</script>
+    <script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=4&amp;pos=right&amp;uid=631103"></script>
+    <script type="text/javascript" id="bdshell_js"></script>
+    <script type="text/javascript">var bds_config = {
+        "snsKey": "{}",
+        "bdTop": 180
+      };
+      document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date() / 3600000);</script>
+    <script>(function() {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();</script>
+
+    <div class="blank"></div>
+    <div class="foot">
+        <div class="footbg">
+            <a href="/list/?order=%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4">最新更新</a>|
+            <a href="/ranklist/">动漫排行榜</a>|
+            <a href="/list/">网站地图</a>|
+            <a href="/list/?order=%E5%90%8D%E7%A7%B0">动漫大全</a>|
+            <a href="#">动漫专题</a>
+        </div>
+      <p>本网站提供的资源均系收集于各大视频网站，本网站只提供web页面服务，并不提供影片资源存储，也不参与录制、上传</p>
+      <p>若本站收录的节目无意侵犯了贵司版权，请给网页底部邮箱地址来信，我们会及时处理和回复，谢谢</p>
+      <p>Copyright &copy; 2019
+        <a href="http://www.dm530p.com/">风车动漫(P)</a>
+        <a href="http://www.dm530p.com/">www.dm530p.com</a></p>
+    </div>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/fc_js/changes.js"></script>
+    <div class="o"></div>
+
+    {{ ""|tp_fc_tongji }}
+
+  </body>
+
+</html>
+
+{% endautoescape %}
+

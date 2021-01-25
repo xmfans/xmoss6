@@ -1,0 +1,118 @@
+
+{% autoescape off %}
+
+<!DOCTYPE html>
+<html lang="zh">
+  
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>「{{keyword}}」全系列 - 在线&下载-233动漫</title>
+    <meta name="keywords" content="{{keyword}}在线,{{keyword}}下载" />
+    <meta name="description" content="{{keyword}}全系列 - 在线观看-全集动漫下载-233动漫" />
+    <meta name="renderer" content="webkit">
+    <meta name="full-screen" content="yes" />
+    <meta name="x5-fullscreen" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="applicable-device" content="pc,mobile">
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/pic/favicon.ico" type="image/vnd.microsoft.icon">
+    <link href="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/css/yx_base.css?ver={{0|tp_ver}}" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="https://s3.pstatp.com/cdn/expire-1-M/jquery/1.12.4/jquery.min.js?ver=202011300059"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/js/yx_jquery.cookie.js"></script>
+  </head>
+  
+  <body>
+
+    {{ aclogin_str }}
+
+    <div id="page-back" class="page-back">
+
+      <!--bgshow-->
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/js/yx_bgshow.js"></script>
+
+      <div class="page">
+
+        {{ header_str }}
+        
+        <div class="container clearfix">
+
+          <div class="main">
+            <section class="root clearfix sec6">
+              <div class="h-new h-hot">动画系列：{{keyword}}</div>
+              <div class="line"></div>
+              <div class="dhnew adj1">
+                <ul>
+
+                    {{ html_family_pic_list }}
+
+                  <div style="clear:both;"></div>
+                </ul>
+              </div>
+              <div class="pagelist">
+                <form name='pagelist' action='/search.html'>
+                  <input type='hidden' name='keyword' value='界'>
+                  <input type='hidden' name='channeltype' value='0'>
+                  <input type='hidden' name='orderby' value=''>
+                  <input type='hidden' name='kwtype' value='0'>
+                  <input type='hidden' name='pagesize' value='18'>
+                  <input type='hidden' name='typeid' value='0'>
+                  <input type='hidden' name='TotalResult' value='99'>
+                  <li class='myclass'>
+                    <span class="pageinfo">「{{keyword}}」系列：共<strong>{{ AIDs_len }}</strong>部动画</span>
+                  </li>
+
+                  
+                </form>
+              </div>
+            </section>
+          </div>
+          <div class="sidebar">
+ 
+            <!--新番表-->
+            {{ xinfans_table_str }}
+
+            
+            {{ update_list_str }}
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="linkf">
+      <div class="linkf-content">
+        <div>
+          <span>快速导航：</span>
+          <ul>
+
+              {{ fastnav_str }}
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <footer role="contentinfo">
+      <div class="footer-content">
+        <p>本站的
+          <strong>日本动漫</strong>由网络第三方视频类网站收集，本站不提供任何视听上传服务，所有内容均来自视频分享站点所提供的公开引用资源。</p>
+        <p>
+          <small>© 2019 233动漫 . All Rights Reserved</small>
+          <div style="display:none;">
+          </div>
+        </p>
+      </div>
+    </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/js/yx_hdm2.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/js/yx_common.js" type="text/javascript"></script>
+
+    
+  </body>
+
+  {{ ""|tp_tongji }}
+
+  
+</html>
+
+{% endautoescape %}
+
+

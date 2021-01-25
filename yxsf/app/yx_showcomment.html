@@ -1,0 +1,46 @@
+
+{% autoescape off %}
+
+<head>
+
+
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/pic/favicon.ico" type="image/vnd.microsoft.icon">
+
+    <link href="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/css/showcomment.css?ver=202011300059" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="https://s3.pstatp.com/cdn/expire-1-M/jquery/1.12.4/jquery.min.js?ver=202011300059"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/js/yx_jquery.cookie.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/js/yx_base64.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/js/yx_playpre.js?ver=202011300059"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/js/yx_comment.js?ver=202011300059"></script>
+    
+
+    <!-- overload -->
+    <style type="text/css">body { font-size: 80%; background-color: #fefefe; color: #222222; } .baseblock .blocktitle * { color: #222222; } .baseblock .blocktitle a { color: #222222; } #container { background-color: #fefefe; color: #222222; border-color: #eeeeee; } .cell { display: block; } .tag { color: #888888; } .tagvalue { color: #333333; } .baseblock .blocktitle .tag { color: #888888; } .baseblock .blocktitle .tagvalue { color: #333333; } .opturl { color: #8888dd; padding: 0px 4px; } .baseblock { padding: 4px; color: #222222; } .baseblock .blocktitle { color: #bbbbbb; padding: 4px 2px; color: #222222; } .baseblock .blockcontent { padding: 6px 4px; background-color: #efefef; color: #222222; } .delbtn { margin-left: 4px; } .opturl { color: #444444; /*background-color: #eeeeee;*/ border: 1px solid #888888; border-radius: 4px; text-decoration: none; margin-right: 4px; } .pbutton { color: #222222; } .pbutton_current { color: #ffffff; background-color: #888888; } div, span, p, pre, a, button { color: #333333; } a { font-size: 80%; } .desc { color: #600000; /*color: #41c4e3;*/ font-size: 120%; line-height: 180%; } .baseblock .blocktitle .cid { color: #ff1010; }</style></head>
+  <body>
+    <div id="root">
+      <div id="container">
+        <div class="baseblock">
+          <div class="blocktitle">
+            <a class="opturl" href="/show_comment">返回主菜单</a></div>
+        </div>
+        <ul>
+        
+          <div style="text-align: center; line-height: 36px;">
+            {{pageurls_str}}
+          </div>
+         
+          {{html_comment_lis}}
+        
+          <div style="text-align: center; line-height: 36px;">
+            {{pageurls_str}}
+          </div>
+
+        </ul>
+      </div>
+    </div>
+  </body>
+
+{% endautoescape %}
+
+

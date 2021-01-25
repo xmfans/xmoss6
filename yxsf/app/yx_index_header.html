@@ -1,0 +1,51 @@
+
+{% autoescape off %}
+
+<header class="header" role="banner">
+    <div class="logo">
+      <a title="动漫下载" href="/" target="_self">233动漫</a></div>
+    <div class="nav clearfix" id="nav" role="navigation">
+      <div class="nav1">
+        <nav class="nav-main">
+          <ul>
+
+            {{ nav1_lis_str }}
+            
+          </ul>
+        </nav>
+      </div>
+      <div class="nav2">
+        <nav class="nav-search">
+          <ul>
+
+            <li><a title="海贼王" href="/family/%e6%b5%b7%e8%b4%bc%e7%8e%8b.html">海贼王</a></li>
+
+            <li><a title="银魂" href="/family/%e9%93%b6%e9%ad%82.html">银魂</a></li>
+
+            <li><a title="一拳超人" href="/family/%e4%b8%80%e6%8b%b3%e8%b6%85%e4%ba%ba.html">一拳超人</a></li>
+
+            <li><a title="食戟之灵" href="/family/%e9%a3%9f%e6%88%9f%e4%b9%8b%e7%81%b5.html">食戟之灵</a></li>
+
+            <li><a title="刀剑神域" href="/family/%e5%88%80%e5%89%91%e7%a5%9e%e5%9f%9f.html">刀剑神域</a></li>
+
+            <li><a title="进击的巨人" href="/family/%e8%bf%9b%e5%87%bb%e7%9a%84%e5%b7%a8%e4%ba%ba.html">进击的巨人</a></li>
+
+            <li><a title="JOJO的奇妙冒险" href="/family/JOJO%e7%9a%84%e5%a5%87%e5%a6%99%e5%86%92%e9%99%a9.html">JOJO的奇妙冒险</a></li>
+
+            <li><a title="后宫动漫" href="/catalog/?label=%e5%90%8e%e5%ae%ab" target="_self">后宫动漫</a></li>
+
+            
+          </ul>
+        </nav>
+      </div>
+      <div class="nav3">
+        <form method="get" name="search" action="/search" target="_self" role="search" onSubmit="return checkForm(title)">
+          <input class="shinput" name="keyword" type="text" placeholder="请输入您想要搜索的动画">
+          <input hidden="hidden" name="seaex" type="text" value="1" readonly="readonly" />
+          <input type="submit" value="搜索" class="searchbtn"></form>
+      </div>
+    </div>
+</header>
+  
+{% endautoescape %}
+

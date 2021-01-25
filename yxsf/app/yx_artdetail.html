@@ -1,0 +1,214 @@
+
+{% autoescape off %}
+
+<!DOCTYPE html>
+<html lang="zh">
+  
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{{ art_title }} - 动漫资讯 - 233动漫</title>
+    <meta name="keywords" content="{{keyword1}},{{keyword1}}情报" />
+    <meta name="description" content="{{ art_title }} -动漫资讯-233动漫" />
+    <meta name="renderer" content="webkit">
+    <meta name="full-screen" content="yes" />
+    <meta name="x5-fullscreen" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="applicable-device" content="pc,mobile">
+
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/pic/favicon.ico" type="image/vnd.microsoft.icon">
+    
+    <link href="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/css/yx_base.css?ver={{0|tp_ver}}" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/css/yx_artzx.css?ver=202011300059" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/css/comment.zero.css?ver=202011300059" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/js/headimgs.js?ver=202011300059"></script>
+    <script type="text/javascript" src="https://s3.pstatp.com/cdn/expire-1-M/jquery/1.12.4/jquery.min.js?ver=202011300059"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/js/yx_jquery.cookie.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/js/yx_base64.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/js/yx_playpre.js?ver=202011300059"></script>
+
+  </head>
+  
+  <body>
+
+    {{ aclogin_str }}
+
+    <div id="page-back" class="page-back">
+
+      <!--bgshow-->
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/js/yx_bgshow.js"></script>
+
+      <div class="page">
+
+        {{ header_str }}
+        
+        <div class="container clearfix">
+
+          <div class="main">
+
+            <section class="atl">
+              {{ detail_text }}
+            </section>
+
+          </div>
+          <div class="sidebar">
+
+            <div class="side-sec clearfix">
+            </div>
+
+            <div class="side-sec clearfix">
+              <h2>相关动画</h2>
+              <div>
+                <ul class="id_inner">
+                  {{html_article_rel_anime}}
+                </ul>
+              </div>
+            </div>
+            <div class="side-sec clearfix jhtj">
+              <h2>相关资讯</h2>
+              {{html_article_rel}}
+            </div>
+          </div>
+
+          <section id="dm-comment">
+            <div class="neirong1 t">
+              <div class="normal-nei3">
+                <div class="down-start">评论浏览</div>
+                <div class="pinglun">
+
+                  <div id="container" data-id="city" style="position: relative;">
+                    <div id="wrapper" class="" data-version="">
+                      <div class="emotion-widget"></div>
+                      <div id="login">
+                        <ul id="login-account">
+                          <li id="login-img">
+                            <button type="button" id="login-img-btn" data-path="c_profile" title="头像">
+                              <img referrerpolicy="no-referrer" src="" alt="头像"></button>
+                          </li>
+                          <li id="login-type">
+                            <button type="button" id="login-type-btn" data-path="c_profile" title="login type">
+                              <span class="text-indent i-p-twitter">login type</span></button>
+                          </li>
+                          <li id="login-name">
+                            <button type="button" id="login-name-btn" data-target="#login-layer">
+                              <span id="login-name-text">游客</span>
+                              <i class="i-drop-b"></i>
+                            </button>
+                          </li>
+
+                        </ul>
+                      </div>
+                      <div id="fake-form" class="hide">
+                        <textarea id="fake-content" placeholder="撰写评论"></textarea>
+                        <button type="button" class="fake-write-btn">
+                          <span>发布</span></button>
+                      </div>
+                      <div id="wf" class="wf-login-enable">
+                        <div id="wf-form" class="wf-form outline-qq">
+                          <div class="wf-content-wrapper">
+                            <label for="wf-content">评论输入领域</label>
+                            <textarea id="wf-content" placeholder="撰写评论"></textarea>
+                          </div>
+                          <div class="wf-attach-wrapper wf-bottom-wrapper">
+                            <div class="attach-drag-wrapper hide">
+                              <div>
+                                <span class="attach-drag-icon i-photo-drag-b"></span>
+                                <span class="attach-drag-guide">把照片拖拽到这里</span></div>
+                            </div>
+                            <div class="attach-image-wrapper"></div>
+                            <div class="attach-scrap-wrapper"></div>
+                          </div>
+                          <div class="wf-function-wrapper">
+                            <div class="wf-attach-function">
+                              <div class="attach-photo-btn">
+                                <form action="/image/upload/" method="post" enctype="multipart/form-data">
+                                  <div class="upload i-photo-b">
+                                    <label for="lv_file_1" class="text-indent">添加照片</label>
+                                    <input id="lv_file_1" type="file" name="lv_file" multiple=""></div>
+                                </form>
+                              </div>
+                            </div>
+                            <div class="wf-sticker-function">
+                              <button type="button" id="open-sticker-btn" class="open-sticker-btn i-sticker-b" data-name="wf">
+                                <span>open sticker</span></button>
+                            </div>
+                            <div id="wf-function" class="wf-function">
+                              <button type="button" id="wf-write-btn" class="wf-write-btn">
+                                <span>发布</span></button>
+                            </div>
+                          </div>
+
+                          <div id="emoji_frame" class="wf-sticker-wrapper" hidden="hidden"></div>
+
+                        </div>
+                      </div>
+                      <div id="strategies" class="sns-login-enable">
+                        <div id="sns-login"></div>
+                        <div id="guest"></div>
+                      </div>
+                      <div id="highlight"></div>
+                      <div class="reply-count">
+                        <div class="left">评论
+                          <span class="count-text">0</span></div>
+                        <div class="sort">
+
+                        </div>
+                      </div>
+                      <div id="list" class=""></div>
+                      <div id="comment_page" class="pagelist"></div>
+                    </div>
+
+                  </div>
+                  
+
+                  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/js/yx_comment.js?ver=202011300059"></script>
+                  <script>
+                    __comment_init();
+                    __set_on_sendcomment();
+                    __yx_show_comments_page();
+                  </script>
+
+
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="linkf">
+      <div class="linkf-content">
+        <div>
+          <span>快速导航：</span>
+          <ul>
+          
+              {{ fastnav_str }}
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <footer role="contentinfo">
+      <div class="footer-content">
+        <p>本站的
+          <strong>日本动漫</strong>由网络第三方视频类网站收集，本站不提供任何视听上传服务，所有内容均来自视频分享站点所提供的公开引用资源。</p>
+        <p>
+          <small>© 2019 233动漫 . All Rights Reserved</small>
+          <div style="display:none;">
+          </div>
+        </p>
+      </div>
+    </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/js/yx_common.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/js/yx_hdm.js" type="text/javascript"></script>
+
+  </body>
+
+  {{ ""|tp_tongji }}
+
+</html>
+
+{% endautoescape %}
+

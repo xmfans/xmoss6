@@ -1,0 +1,49 @@
+
+{% autoescape off %}
+
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="user-scalable=no, width=device-width,initial-scale=1.0">
+        <meta content="telephone=no" name="format-detection" />
+        <meta http-equiv="X-UA-Compatible" content="requiresActiveX=true" />
+        {{html_m_canonical}}
+        <title>播放记录－风车动漫(P)</title>
+        <meta name="keywords" content="播放记录" />
+        <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/fc_pic/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="apple-touch-icon-precomposed" href="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/fc_pic/ico.png" />
+        
+        <link href="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/fc_css/m.css?ver=156223" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="https://s3.pstatp.com/cdn/expire-1-M/jquery/1.12.4/jquery.min.js?ver=156223"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/fc_js/history.js?ver=156223"></script>
+    </head>
+    
+    <body>
+
+        {{ html_m_index_head }}
+        {{ html_m_index_sort }}
+
+        <div class="tlist">
+            <ul id="playhistory" style="display:block">
+                <li>您的观看历史为空</li>
+                <script>PlayHistoryObj.viewPlayHistory('playhistory')</script></ul>
+        </div>
+
+        <div class="footer">
+            <p>
+                <a href="http://m.dm530p.com">风车动漫</a>－专注动漫的门户网站</p></div>
+        <div style="display:none">
+
+        </div>
+
+        {{ ""|tp_fc_tongji }}
+
+    </body>
+
+</html>
+
+{% endautoescape %}
+
+

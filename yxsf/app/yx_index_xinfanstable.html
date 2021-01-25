@@ -1,0 +1,41 @@
+
+{% autoescape off %}
+
+<div id="dh-update" class="normal-wai">
+    <div class="hd">
+      <h2>一周更新动漫</h2></div>
+    <div class="tabbed_content">
+      <div class="tabs" id="weektb_">
+        <span class="weeknormaltab" id="weektb_1" onclick="weekHoverLi(1)">周一</span>
+        <span class="weeknormaltab" id="weektb_2" onclick="weekHoverLi(2)">周二</span>
+        <span class="weeknormaltab" id="weektb_3" onclick="weekHoverLi(3)">周三</span>
+        <span class="weeknormaltab" id="weektb_4" onclick="weekHoverLi(4)">周四</span>
+        <span class="weeknormaltab" id="weektb_5" onclick="weekHoverLi(5)">周五</span>
+        <span class="weeknormaltab" id="weektb_6" onclick="weekHoverLi(6)">周六</span>
+        <span class="weeknormaltab" id="weektb_7" onclick="weekHoverLi(7)">周日</span></div>
+      <div class="slide_content">
+        <div class="ctt"></div>
+        <div class="tabslider">
+            {% for vWeek in xinfans_table %}
+              <ul id="weektbc_0{{ forloop.counter }}" class="weekundis">
+                  {% for key,value in vWeek.items %}
+                    <li>
+                      <span>
+                        <a title="{{value|tp_dict_getval:'##动画名称：'}}下载" href="{{key|tp_get_detail_urlpath}}" target="_self">{{value|tp_xinfan_new_title}}</a>
+                        {% if value|tp_xinfan_is_new %}
+                          <font color="#FF0000"> new</font>
+                        {% endif %}
+                      </span>
+                      <a title="{{value|tp_dict_getval:'##动画名称：'}}" href="{{key|tp_get_detail_urlpath}}" target="_self">{{value|tp_dict_getval:'##动画名称：'}}</a>
+                    </li>
+                  {% endfor %}
+              </ul>
+            {% endfor %}
+            
+        </div>
+      </div>
+    </div>
+</div>
+
+{% endautoescape %}
+

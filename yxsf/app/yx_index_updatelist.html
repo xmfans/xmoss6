@@ -1,0 +1,29 @@
+
+{% autoescape off %}
+
+<div class="side-update normal-wai">
+    <div class="hd">
+      <h2>最近更新</h2></div>
+    <div class="normal-nei">
+      <ul class="item-update">
+        
+        {% for key,value in texts_dict_update.items %}
+          <li>
+            <em>
+              <a title="{{value|tp_dict_getval:'##动画名称：'}}" href="{{key|tp_get_detail_urlpath}}" target="_self">{{value|tp_dict_getval:'##动画名称：'}}</a>
+            </em>
+            {% if value|tp_xinfan_is_new %}
+              <span><font color="#FF0000">{{value|tp_dict_getval:'##更新时间4：'}}</font></span>
+            {% else %}
+              <span>{{value|tp_dict_getval:'##更新时间4：'}}</span>
+            {% endif %}
+          </li>
+        {% endfor %}
+
+      </ul>
+      <div style="clear:both"></div>
+    </div>
+</div>
+
+{% endautoescape %}
+
