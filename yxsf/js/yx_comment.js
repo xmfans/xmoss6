@@ -163,12 +163,10 @@ function __on_sendcomment() {
     //
     const AID = __get_detail_play_page_AID();
     var input_val = $('#wf-content').val();
-    $('#wf-content').val("");
-    
+
     //
     $('#emoji_frame').attr('hidden', 'hidden');
-
-    
+   
     //
     var r_url = "/send_comment?" + 'cid=' + AID + '&comment_content=' + encodeURIComponent(input_val);
     $.ajax({
@@ -176,7 +174,8 @@ function __on_sendcomment() {
         url: r_url,
     }).success(function(message) {
         if("{'err': '0'}" == message){
-            //
+            $('#wf-content').val("");
+            $('#wf-content').css('height', 'auto');
         }
         else{
           alert(message);
