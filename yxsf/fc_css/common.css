@@ -1,0 +1,66 @@
+#www_tip_bak {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 9998;
+    overflow: hidden;
+    display: none;
+  }
+  #www_tip {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    width: 260px;
+    height: 130px;
+    z-index: 9999;
+    background-color: #F8F8F8;
+    border-radius: 2px;
+    text-align: center;
+    padding: 10px 8px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .3);
+}
+#www_tip h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #555;
+}
+#www_tip .www {
+    font-size: 14px;
+    font-weight: bold;
+    color: #00C;
+}
+#www_tip .www span {
+    color: #C00;
+}
+#www_tip .text {
+    font-size: 15px;
+    margin: 4px 0 6px 0;
+}
+#www_tip .text span {
+    color: #C00;
+}
+#www_tip a {
+    background-image: linear-gradient(#5bab0a, #468407, #336105);
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 6px;
+    padding: 3px 7px;
+    position: absolute;
+    bottom: 0;
+    white-space: nowrap;
+    transform: translate(-50%, -25%);
+}
+#www_tip a:hover {
+    background-image: linear-gradient(#549e08, #3d7305, #294e03);
+}
+
