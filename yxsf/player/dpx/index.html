@@ -169,7 +169,8 @@
           }
           //
           var userAgent = navigator.userAgent;
-          if(userAgent.indexOf("QQ") >= 0){
+          if(userAgent.match(/QQ/i) || userAgent.match(/baiduboxapp/i))
+          {
             dp_v = {
               url: vurl
             }
