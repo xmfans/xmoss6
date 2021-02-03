@@ -145,7 +145,7 @@
         var videoObject = {
           container: '#player1', //容器的ID或className
           variable: 'player',//播放函数名称
-          autoplay:true,
+          autoplay:false,
           video: vurl
         };
         var player = new ckplayer(videoObject);
@@ -190,9 +190,9 @@
         var dp = new DPlayer({
           element: document.getElementById('player1'),
           screenshot: (!!up_screenshot),
-			    video: GetDPV(vurl)
+          video: GetDPV(vurl),
+          autoplay:false
         });
-        dp.play();
       }
 
     </script>
