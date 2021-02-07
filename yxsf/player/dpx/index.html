@@ -74,13 +74,13 @@
       }
     </script>
 
-    <link rel="stylesheet" href="./DPlayer.min.css?ver=202011300063">
-    <script type="text/javascript" src="https://s3.pstatp.com/cdn/expire-1-M/jquery/1.12.4/jquery.min.js?ver=202011300063"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/player/dpx/dett_pf.js?ver=202011300063"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/player/dpx/dett.js?ver=202011300063"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/player/dpx/hls.min.js?ver=202011300063"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/player/dpx/DPlayer.min.js?ver=202011300063"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/player/dpx/ckplayer.min.js?ver=202011300063"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/player/dpx/DPlayer.min.css?ver=202011300067">
+    <script type="text/javascript" src="https://s3.pstatp.com/cdn/expire-1-M/jquery/1.12.4/jquery.min.js?ver=202011300067"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/player/dpx/dett_pf.js?ver=202011300067"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/player/dpx/dett.js?ver=202011300067"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/player/dpx/hls.min.js?ver=202011300067"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/player/dpx/DPlayer.min.js?ver=202011300067"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/player/dpx/ckplayer.min.js?ver=202011300067"></script>
 
     <style type="text/css">body{margin:0;padding:0px;}</style>
     <style type="text/css">body,html{height: 100%;}</style>
@@ -94,14 +94,14 @@
 		  var tip_html = '';
 		  var isAndroid = !!navigator.userAgent.match(/(Android)/i);
 		  if (isAndroid) {
-			  tip_html = '<b>推荐使用谷歌/火狐/UC浏览器播放，更快更稳，<a href="http://imtt.dd.qq.com/16891/apk/177FCB82643B8801AE50B9C2266C320C.apk" target="_blank" style="color:#E00">点此前往下载谷歌</a></b>';
+			tip_html = '<b>推荐使用谷歌浏览器播放，更快更稳，<a href="http://imtt.dd.qq.com/16891/apk/177FCB82643B8801AE50B9C2266C320C.apk" target="_blank" style="color:#E00">点此前往下载谷歌</a></b>';
 		  }
 		  $("#divtip-pre1").html(tip_html);
 		  if(isAndroid) {
-        $("#divtip-pre1").css("display", "block");
-        setTimeout(function(){
-          $("#divtip-pre1").fadeOut(2000);
-        }, 4000);
+			$("#divtip-pre1").css("display", "block");
+			setTimeout(function(){
+			  $("#divtip-pre1").fadeOut(2000);
+			}, 4000);
 		  }
 		</script>
 
@@ -185,13 +185,20 @@
           }
           return dp_v;
         }
-
+        //
+        var aoto_play = false;
+        if(typeof dpIsMobile == "function"){
+          aoto_play = !dpIsMobile();
+          if(aoto_play){
+            aoto_play = !__UA.match(/Mac/i);
+          }
+        }
         //
         var dp = new DPlayer({
-          element: document.getElementById('player1'),
+          container: document.getElementById('player1'),
           screenshot: (!!up_screenshot),
           video: GetDPV(vurl),
-          autoplay:false
+          autoplay:aoto_play
         });
       }
 
