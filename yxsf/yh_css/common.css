@@ -51,7 +51,7 @@
     color: #C00;
 }
 #www_tip a {
-    background-image: linear-gradient(#5bab0a, #468407, #336105);
+    background-image: linear-gradient(#F94A6E, #E93A5E, #D92A4E);
     color: #fff;
     text-align: center;
     font-size: 16px;
@@ -63,6 +63,6 @@
     transform: translate(-50%, -25%);
 }
 #www_tip a:hover {
-    background-image: linear-gradient(#549e08, #3d7305, #294e03);
+    background-image: linear-gradient(#ce3b59, #bb2947, #ab1d3a);
 }
 
