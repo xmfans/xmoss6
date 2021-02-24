@@ -305,7 +305,7 @@ input,button,select,textarea {
 	margin-right:12px;
 }
 .star {
-	height:12px;
+	height:13px;
 }
 .show {
 	font-size:12px;
@@ -317,9 +317,14 @@ input,button,select,textarea {
 	font-size:1.6em;
 	font-weight:normal;
 	color:#FA3D8D;
+	white-space: nowrap;
+	overflow-x: auto;
 }
 .show p {
-	margin-top:8px;
+    margin-top: 8px;
+    white-space: nowrap;
+    overflow-x: auto;
+    margin-left: 134px;
 }
 .show a {
 	display:inline-block;
