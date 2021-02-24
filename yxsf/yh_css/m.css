@@ -321,7 +321,7 @@ input,button,select,textarea {
 	overflow-x: auto;
 }
 .show p {
-    margin-top: 7.5px;
+    margin-top: 7px;
     white-space: nowrap;
     overflow-x: auto;
     margin-left: 134px;
