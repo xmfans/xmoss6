@@ -5,6 +5,6 @@ const __g_headimgs = ["6e6880degy1gbkpuk6e26j205k05kwee","6e6880degy1gbkpukbujrj
 //////////////////////////////////
 
 function __get_headimg_url(_index){
-    return ('//lz.sinaimg.cn/large/' + __g_headimgs[_index % __g_headimgs.length] + '.jpg');
+    return ('//tvax3.sinaimg.cn/large/' + __g_headimgs[_index % __g_headimgs.length] + '.jpg');
 }
 
