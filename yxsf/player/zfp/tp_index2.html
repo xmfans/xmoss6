@@ -74,13 +74,10 @@
       }
     </script>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/player/dpx/DPlayer.min.css?ver=202011300079">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/player/zfp/DPlayer.min.css?ver=202011300079">
     <script type="text/javascript" src="https://s3.pstatp.com/cdn/expire-1-M/jquery/1.12.4/jquery.min.js?ver=202011300079"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/player/dpx/dett_pf.js?ver=202011300079"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/player/dpx/dett.js?ver=202011300079"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/player/dpx/hls.min.js?ver=202011300079"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/player/dpx/DPlayer.min.js?ver=202011300079"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/player/dpx/ckplayer.min.js?ver=202011300079"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/player/zfp/zfhls.js?ver=202011300079"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/player/zfp/DPlayer.min.js?ver=202011300079"></script>
 
     <style type="text/css">body{margin:0;padding:0px;}</style>
     <style type="text/css">body,html{height: 100%;}</style>
@@ -92,16 +89,20 @@
 		<div id="divtip-pre1" style="display:none; padding: 1% 1%;margin: 0px auto;font-size: 15px;color: rgb(0, 162, 255);position: absolute;top: 10px;text-align: center;border-radius: 8px;border: 1px solid rgb(0, 162, 255);z-index:99999;left: 40%;-ms-transform: translateX(-34%);-moz-transform: translateX(-34%);-webket-transform: translateX(-34%);transform: translateX(-34%);"></div>
 		<script>
 		  var tip_html = '';
+      var isSupport = true;
 		  var isAndroid = !!navigator.userAgent.match(/(Android)/i);
-		  if (isAndroid) {
-			tip_html = '<b>推荐使用谷歌浏览器播放，更快更稳，<a href="http://imtt.dd.qq.com/16891/apk/177FCB82643B8801AE50B9C2266C320C.apk" target="_blank" style="color:#E00">点此前往下载谷歌</a></b>';
-		  }
+      if(isAndroid){
+        isSupport = !navigator.userAgent.match(/(MQQBrowser|baiduboxapp|UCBrowser)/i);
+        if(!isSupport){
+          tip_html = '<b>本视频使用HLS模式，已知不支持QQ/UC/百度浏览器，请更换浏览器，推荐使用谷歌，<a href="http://imtt.dd.qq.com/16891/apk/177FCB82643B8801AE50B9C2266C320C.apk" target="_blank" style="color:#E00">点此前往下载谷歌</a></b>';
+        }
+      }
 		  $("#divtip-pre1").html(tip_html);
 		  if(isAndroid) {
-			$("#divtip-pre1").css("display", "block");
-			setTimeout(function(){
-			  $("#divtip-pre1").fadeOut(2000);
-			}, 4000);
+        $("#divtip-pre1").css("display", "block");
+        setTimeout(function(){
+          $("#divtip-pre1").fadeOut(2000);
+        }, 40000);
 		  }
 		</script>
 
@@ -109,47 +110,11 @@
 
     <script>
 
-      //
-      var maxBuff = GetUrlQueryInt(window.location.href, "maxbuff");
-      var maxMaxBuff = GetUrlQueryInt(window.location.href, "maxmaxbuff");
-      Hls2SetMaxBufferLength(maxBuff, maxMaxBuff);
-
-      //
-      var okzyw = GetUrlQueryInt(window.location.href, "okzyw");
       var up_screenshot = GetUrlQueryInt(window.location.href, "screenshot");
-      var up_mmt = GetUrlQueryInt(window.location.href, "mmt");
-      var up_vtype = GetUrlQuery(window.location.href, "vtype");
       var vurl = GetVUrl();
 
       //
-      if((typeof dettchk == "function") && dettchk()){
-        if(up_mmt){
-          OpenMMT();
-        }
-        if(okzyw){
-          OpenMMT();
-        }
-      }
-      //
-      if(typeof devtoolsDetector == "object"){
-        devtoolsDetector.addListener(function(isOpen, detail) {
-          if(typeof mmton == "function"){
-            mmton(!isOpen);
-          }
-        });
-        devtoolsDetector.lanuch();
-      }
-
-      //
-      if (/msie|trident/i.test(navigator.userAgent)){
-        var videoObject = {
-          container: '#player1', //容器的ID或className
-          variable: 'player',//播放函数名称
-          autoplay:false,
-          video: vurl
-        };
-        var player = new ckplayer(videoObject);
-      }else {
+      if(true && isSupport){
         function GetDPV(vurl){
           var dp_v = {
               type: 'customHls',
@@ -162,27 +127,6 @@
               },
               url: vurl
           };
-          if(!up_mmt){
-            dp_v = {
-              url: vurl
-            }
-          }
-          //
-          var userAgent = navigator.userAgent;
-          if(userAgent.match(/QQ/i) || userAgent.match(/baiduboxapp/i))
-          {
-            dp_v = {
-              url: vurl
-            }
-            return dp_v;
-          }
-          //
-          if('mp4' == up_vtype){
-            dp_v = {
-              url: vurl
-            }
-            return dp_v;
-          }
           return dp_v;
         }
         //
@@ -194,10 +138,12 @@
           }
         }
         //
+        var zftheme = '#{{zfhtk}}';
         var dp = new DPlayer({
           container: document.getElementById('player1'),
           screenshot: (!!up_screenshot),
           video: GetDPV(vurl),
+          thene: zftheme,
           autoplay:aoto_play
         });
       }
