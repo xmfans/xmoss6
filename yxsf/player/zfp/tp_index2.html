@@ -98,7 +98,7 @@
         }
       }
 		  $("#divtip-pre1").html(tip_html);
-		  if(isAndroid) {
+		  if(isAndroid && tip_html) {
         $("#divtip-pre1").css("display", "block");
         setTimeout(function(){
           $("#divtip-pre1").fadeOut(2000);

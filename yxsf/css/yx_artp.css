@@ -635,8 +635,7 @@
 	color:#ddd
 }
 .html,.playwrap {
-	background:url(http://wxt.sinaimg.cn/large/777d58c0gy1fl79b26uhuj20rs0fmabp.jpg) center top no-repeat;
-	background-size:cover
+	background-size:cover;
 }
 .html {
 	font-family:"Microsoft YaHei";

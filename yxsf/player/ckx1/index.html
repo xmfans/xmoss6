@@ -31,7 +31,7 @@
 			tip_html = '<b>推荐使用谷歌浏览器播放，更快更稳，<a href="http://imtt.dd.qq.com/16891/apk/177FCB82643B8801AE50B9C2266C320C.apk" target="_blank" style="color:#E00">点此前往下载谷歌</a></b>';
 		  }
 		  $("#divtip-pre1").html(tip_html);
-		  if(isAndroid) {
+		  if(isAndroid && tip_html) {
 			$("#divtip-pre1").css("display", "block");
 			setTimeout(function(){
 			  $("#divtip-pre1").fadeOut(2000);
