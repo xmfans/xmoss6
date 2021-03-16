@@ -47,7 +47,8 @@
       //
       function GetVUrl(){
         var vurl = GetUrlQuery(window.location.href, "url");
-        vurl = ('/alm3p/index.m3u8?path=' + encodeURIComponent(vurl));
+        var vpx_bd = (navigator.userAgent.match(/baiduboxapp/i) ? 'index.m3u8' : '');
+        vurl = ('/alm3p/'+vpx_bd+'?path=' + encodeURIComponent(vurl));
         if(vurl){
           var dpvt = GetDPVT();
           var xup = "&";
