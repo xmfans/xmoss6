@@ -11,7 +11,7 @@
     overflow: hidden;
     display: none;
   }
-  #www_tip {
+#www_tip {
     position: fixed;
     top: 0;
     right: 0;
@@ -40,15 +40,12 @@
     color: #00C;
     font-family: 微软雅黑;
 }
-#www_tip .www span {
+#www_tip span {
     color: #C00;
 }
 #www_tip .text {
     font-size: 15px;
     margin: 4px 0 6px 0;
-}
-#www_tip .text span {
-    color: #C00;
 }
 #www_tip a {
     background-image: linear-gradient(#F94A6E, #E93A5E, #D92A4E);

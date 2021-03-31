@@ -76,7 +76,7 @@ function __onclick_pingfen_newto(){
             _gif_index += 2;
         }
         //
-        const _wr_text = '<img src=\"https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/pic/icon/rank_' + _gif_index + '.gif\">';
+        const _wr_text = '<img src=\"https://cdn.jsdelivr.net/gh/pltfans/xmoss6/yxsf/pic/icon/rank_' + _gif_index + '.gif\">';
         _html_texts += _wr_text;
     }
     $('#avgstar').html(_html_texts);
@@ -86,7 +86,7 @@ function __onclick_pingfen_newto(){
    for (var i = 0; i < 10; i++){
        var _gif_index = (i % 2 + 3);
        //
-       const _wr_text = '<img title=\"' + ((i+1)*0.5).toFixed(1) + '\" src=\"https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/pic/icon/rank_' + _gif_index + '.gif\">';
+       const _wr_text = '<img title=\"' + ((i+1)*0.5).toFixed(1) + '\" src=\"https://cdn.jsdelivr.net/gh/pltfans/xmoss6/yxsf/pic/icon/rank_' + _gif_index + '.gif\">';
        _html_texts += _wr_text;
    }
    $('.donghua_pf #stars').html(_html_texts);
