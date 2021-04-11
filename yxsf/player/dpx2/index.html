@@ -194,10 +194,24 @@
           }
         }
         //
+        var dpv = GetDPV(vurl);
+        //
+        if(navigator.userAgent.match(/MQQ/i)){
+          var url = dpv['url'];
+          if(url.slice(0, 5) == 'https'){
+            if(url.match(/(\/zfm3u8\/|\/alm3p\/|\/tmm3p\/)/)){
+              url = ('http' + url.slice(5));
+            }
+          }else if(url[0] == '/'){
+            url = ('http://' + window.location.host + url);
+          }
+          dpv['url'] = url;
+        }
+        //
         var dp = new DPlayer({
           container: document.getElementById('player1'),
           screenshot: (!!up_screenshot),
-          video: GetDPV(vurl),
+          video: dpv,
           autoplay:aoto_play
         });
       }
