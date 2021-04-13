@@ -84,6 +84,11 @@
       var vurl = GetVUrl();
 
       //
+      if(vurl.toLowerCase().indexOf('%2falm3p%2fbd-') >= 0){
+        window['M3P_RT'] = true;
+      }
+
+      //
       $.get(vurl, function(data,msg){
         if(true){
             //
