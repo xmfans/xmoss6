@@ -47,8 +47,14 @@
       //
       function GetVUrl(){
         var vurl = GetUrlQuery(window.location.href, "url");
+        var ph = GetUrlQuery(window.location.href, "ph");
+        var vprp = (ph ? '/m3/' : '/alm3p/');
         var vpx_bd = (navigator.userAgent.match(/baiduboxapp/i) ? 'index.m3u8' : '');
-        vurl = ('/alm3p/'+vpx_bd+'?path=' + encodeURIComponent(vurl));
+        vurl = (vprp+vpx_bd+'?path=' + encodeURIComponent(vurl));
+        if(ph){
+          ph = ph.replace(/_/g,'.');
+          vurl = ('https://'+ph+vurl);
+        }
         if(vurl){
           var dpvt = GetDPVT();
           var xup = "&";
@@ -67,7 +73,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/pltfans/xmoss6/yxsf/player/dpx2/DPlayer.min.js?ver=202103141620"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/pltfans/xmoss6/yxsf/js/base64.min.js?ver=202103141620"></script>
     <script type="text/javascript" src="https://s3.pstatp.com/cdn/expire-1-M/blueimp-md5/2.18.0/js/md5.js?ver=202103141620"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/pltfans/xmoss6/yxsf/player/dpx2/alp3.js?ver=202103141620"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/pltfans/xmoss6/yxsf/player/dpx2/alp4.js?ver=202103141620"></script>
 
     <style type="text/css">body{margin:0;padding:0px;}</style>
     <style type="text/css">body,html{height: 100%;}</style>
@@ -84,7 +90,7 @@
       var vurl = GetVUrl();
 
       //
-      if(vurl.toLowerCase().indexOf('%2falm3p%2fbd-') >= 0){
+      if(vurl.match(/(%2falm3p%2fbd-|%2fgm3p%2fbd-)/i)){
         window['M3P_RT'] = true;
       }
 
@@ -105,7 +111,7 @@
             if(navigator.userAgent.match(/MQQ/i)){
               var url = dpv['url'];
               if(url.slice(0, 5) == 'https'){
-                if(url.match(/(\/zfm3u8\/|\/alm3p\/|\/tmm3p\/)/)){
+                if(url.match(/(\/zfm3u8\/|\/alm3p\/|\/tmm3p\/|\/m3\/)/)){
                   url = ('http' + url.slice(5));
                 }
               }else if(url[0] == '/'){
