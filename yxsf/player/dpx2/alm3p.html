@@ -82,6 +82,9 @@
 
   <body>
 
+    <div id="mtp" style="display:none;width:100%;height:100%;background-image:url(https://sc04.alicdn.com/kf/H701a58cfb10a4920b3c3fd0bfe87e300p.png);background-size:100%;"></div>
+    <div id="mtp-tip" style="display:none; padding: 1% 1%;margin: 0px auto;font-size: 15px;color:#D00;position: absolute;top: 10px;text-align: center;border-radius: 8px;border: 1px solid #D00;z-index:99999;left: 40%;-ms-transform: translateX(-34%);-moz-transform: translateX(-34%);-webket-transform: translateX(-34%);transform: translateX(-34%);"></div>
+
     <div id="player1" style="width:100%;height:100%;"></div>
 
     <script>
@@ -92,6 +95,31 @@
       //
       if(vurl.match(/(%2falm3p%2fbd-|%2fgm3p%2fbd-)/i)){
         window['M3P_RT'] = true;
+      }
+
+
+      //
+      var ua = navigator.userAgent;
+      if(ua.match(/(Android)/i)){
+        if(ua.match(/baiduboxapp/i)){
+          var tip_html = '';
+          if(vurl.match(/(%2fgm3p%2ftxwd)/i)){
+            tip_html = '<b>视频格式不被支持，会导致无法播放/卡顿等异常，请更换浏览器！</b>';
+          }
+          else if(vurl.match(/(%2fgm3p%2f)/i)){
+            tip_html = '<b>本视频需要关闭广告屏蔽，点击右上角(:)→设置→广告屏蔽→关闭→重启浏览器</b>';
+          }
+          //
+          if(tip_html){
+            $('#mtp-tip').html(tip_html);
+            $('#mtp').css('display', 'block');
+            $('#mtp-tip').css('display', 'block');
+            $('#mtp').on('click', function(){
+              $('#mtp').css('display', 'none');
+              $('#mtp-tip').css('display', 'none');
+            });
+          }
+        }
       }
 
       //

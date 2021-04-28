@@ -15,7 +15,7 @@
 			}
 		</style>
 		<script type="text/javascript" src="https://s3.pstatp.com/cdn/expire-1-M/jquery/1.12.4/jquery.min.js?ver=202011300081"></script>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/js/yx_playpre8.js?ver=202011300081"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/js/yx_playpre9.js?ver=202011300081"></script>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/js/yx_dett_pf.js?ver=202011300081"></script>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xmfans/xmoss6/yxsf/js/yx_dett.js?ver=202011300081"></script>
 		
@@ -23,6 +23,8 @@
 
 	<body>
 		
+		<a id="mtp" target="_blank" href="javascript:;" style="display:none;width:100%;height:100%;background-image:url(https://sc04.alicdn.com/kf/H701a58cfb10a4920b3c3fd0bfe87e300p.png);background-size:100%;"></a>
+
 		<div id="divtip-pre1" style="display:none; padding: 1% 1%;margin: 0px auto;font-size: 15px;color: rgb(0, 162, 255);position: absolute;top: 10px;text-align: center;border-radius: 8px;border: 1px solid rgb(0, 162, 255);z-index:99999;left: 40%;-ms-transform: translateX(-34%);-moz-transform: translateX(-34%);-webket-transform: translateX(-34%);transform: translateX(-34%);"></div>
 		<script>
 
@@ -39,6 +41,34 @@
 		// 	}, 4000);
 		//   }
 
+		</script>
+
+
+		<script>
+			//
+			function GetUrlQuery(in_url, in_query){
+				var reg = new RegExp("[?&]+"+in_query+"=([^&]*)");
+				var re_resl = in_url.match(reg);
+				if(re_resl){
+				var qVal = re_resl[1];
+				if(qVal){
+					qVal = qVal.replace(/[+]{1}/g, " ");
+					qVal = decodeURIComponent(qVal);
+					return qVal;
+				}
+				}
+				return null;
+			}
+			var ua = navigator.userAgent;
+			if(ua.match(/(Android)/i)){
+				if(ua.match(/baiduboxapp/i)){
+					var vurl = GetUrlQuery(window.location.href, "url");
+					if(vurl.match(/^(https*:\/\/photovideo\.photo\.qq\.com\/)/i)){
+					$('#mtp').attr('href', vurl);
+					$('#mtp').css('display', 'block');
+				}
+				}
+			}
 		</script>
 
 
