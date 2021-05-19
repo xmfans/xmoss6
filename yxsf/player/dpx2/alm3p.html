@@ -107,8 +107,23 @@
             tip_html = '<b>视频格式不被支持，会导致无法播放/卡顿等异常，请更换浏览器！</b>';
           }
           else if(vurl.match(/(%2fgm3p%2f)/i)){
-            tip_html = '<b>本视频需要关闭广告屏蔽，点击右上角(:)→设置→广告屏蔽→关闭→重启浏览器</b>';
+            //tip_html = '<b>本视频需要关闭广告屏蔽，点击右上角(:)→设置→广告屏蔽→关闭→重启浏览器</b>';
           }
+          //
+          if(tip_html){
+            $('#mtp-tip').html(tip_html);
+            $('#mtp').css('display', 'block');
+            $('#mtp-tip').css('display', 'block');
+            $('#mtp').on('click', function(){
+              $('#mtp').css('display', 'none');
+              $('#mtp-tip').css('display', 'none');
+            });
+          }
+        }
+      }
+      else if(ua.match(/(iPhone|ios)/i)){
+        if(ua.match(/baiduboxapp/i)){
+          var tip_html = '<b>视频格式不支持，iPhone|iPad设备请使用默认浏览器播放！</b>';
           //
           if(tip_html){
             $('#mtp-tip').html(tip_html);
